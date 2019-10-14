@@ -1,0 +1,55 @@
+.singlebed {
+    position: relative;
+    width: 50%;
+    float: left;
+  }
+  
+  /* Make the image responsive */
+  .singlebed img {
+    width: 100%;
+    height: auto;
+  }
+
+  .singlebed .single {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color:grey;
+  }
+
+  .singlebed .single:hover {
+    background-color: whitesmoke;
+  }
+  .doublebed {
+    position: relative;
+    width: 50%;
+    float:right;
+  }
+  
+  /* Make the image responsive */
+  .doublebed img {
+    width: 100%;
+    height: auto;
+  }
+
+  .doublebed .double {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color:grey;
+  }
+
+  .doublebed .double:hover {
+    background-color: whitesmoke;
+  }
+ 

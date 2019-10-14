@@ -1,0 +1,19 @@
+
+<div class="card mb-3">
+   <img src="/assets/images/hotel1.jpg" class="card-img-top" alt="...">
+   <div class="card-body">
+     <h5 class="card-title">Please select your stay</h5>
+     <form #dateDetails="ngForm" (ngSubmit)="availRoom(dateDetails.value)">
+      <div class="form-row">
+        <div class="col">From
+          <input type="date" name="firstDate" class="form-control" [(ngModel)]="firstDate" ngModel>
+        </div>
+        <div class="col">to
+          <input type="date" name="lastDate" class="form-control" [(ngModel)]="lastDate" ngModel>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Check for rooms</button>
+    </form>
+  </div>
+</div>
+ 
