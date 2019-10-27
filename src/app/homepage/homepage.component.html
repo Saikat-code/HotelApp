@@ -3,7 +3,7 @@
    <img src="/assets/images/hotel1.jpg" class="card-img-top" alt="...">
    <div class="card-body">
      <h5 class="card-title">Please select your stay</h5>
-     <form #dateDetails="ngForm" (ngSubmit)="availRoom(dateDetails.value)">
+     <form #dateDetails="ngForm" (ngSubmit)="getCustDates(dateDetails.value)">
       <div class="form-row">
         <div class="col">From
           <input type="date" name="firstDate" class="form-control" [(ngModel)]="firstDate" ngModel>

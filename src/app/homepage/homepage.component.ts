@@ -10,36 +10,34 @@ import { Router } from '@angular/router';
 export class HomepageComponent implements OnInit {
 
   dates:Array<any>;
+  rooms : any;
+  firstdate :any;
+  lastdate: any;
+  diffDays: any;
 
   constructor(public detailsService : DetailsService, private router: Router) { }
   ngOnInit() {
-    this.detailsService.getDates()
-        .subscribe(result => {
-                this.dates=result;
-                console.log(this.dates);
-        })
+    // this.detailsService.getDates()
+    //     .subscribe(result => {
+    //             this.dates=result;
+    //             console.log(this.dates);
+    //     })
   }
-  availRoom(dateDetails)
+  getCustDates(dateDetails)
   {
-    console.log(dateDetails);
-    for(let date of dateDetails)
-    {
-    let getdate=date.payload.doc.data();
-    console.log(getdate)
-    if(this.dates!=getdate)
-    {
-    this.detailsService.roomEntry(dateDetails)
-    .then(
-      () => {
-        alert("Welcome");
-        this.router.navigate(['/login']);
-        });
-    }
-  
-    else{
-      alert("Sorry")
-        }
+      this.firstdate = dateDetails.firstDate;
+      this.lastdate = dateDetails.lastDate;
+      var d1= new Date(this.firstdate);
+      var d2= new Date(this.lastdate);
+      var diff = Math.abs(d2.getTime()-d1.getTime());
+      this.diffDays = Math.ceil(diff/(1000*3600*24));
+      console.log(this.diffDays);
+      this.detailsService.checkRoom(this.diffDays, this.firstdate);
   }
+
+  bookRoom()
+  {
+    
   }
-  
 }
+  
